@@ -41,7 +41,7 @@ ENV SUBSONIC_MAX_MEMORY 512
 
 RUN mkdir -p /opt/app
 
-ADD ./startup.sh /opt/app/
+COPY ./startup.sh /opt/app/
 RUN chmod +x /opt/app/startup.sh
 
 ENTRYPOINT /opt/app/startup.sh 1000
