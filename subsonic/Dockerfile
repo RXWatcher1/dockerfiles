@@ -25,7 +25,7 @@ EXPOSE 4040
 VOLUME /mnt/music
 VOLUME /opt/app/state
 
-ARG SUBSONIC_VERSION
+ENV SUBSONIC_VERSION "6.1.5"
 
 RUN wget "https://s3-eu-west-1.amazonaws.com/subsonic-public/download/subsonic-${SUBSONIC_VERSION}.deb" -O /tmp/subsonic.deb && \
   dpkg -i /tmp/subsonic.deb && \

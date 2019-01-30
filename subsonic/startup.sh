@@ -34,7 +34,7 @@ sudo -u ${UNAME} cp -Rf /opt/ffmpeg/* ${STATE_DIR}/transcode/
 echo "INFO: Updating /etc/default/subsonic"
 
 cat > /etc/default/subsonic << EOM
-SUBSONIC_ARGS="--max-memory=${SUBSONIC_MAX_MEMORY:-512} --home=${STATE_DIR} --port=4040 --default-music-folder=/mnt/music --context-path=${SUBSONIC_CONTEXT_PATH}"
+SUBSONIC_ARGS="--db=jdbc:mysql://mariadb:3306/subsonic?user=root&password=password321&characterEncoding=UTF-8 --max-memory=${SUBSONIC_MAX_MEMORY:-512} --home=${STATE_DIR} --port=4040 --default-music-folder=/mnt/music --context-path=${SUBSONIC_CONTEXT_PATH}"
 SUBSONIC_USER=${UNAME}
 export LANG=${LANG}
 export LANGUAGE=${LANG}
